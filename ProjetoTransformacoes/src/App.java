@@ -1,13 +1,15 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import Transformacoes.EscalaExemplo;
 import Transformacoes.RotacaoExemplo;
 import Transformacoes.TranslacaoExemplo;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        mostrarTranslacao(true);
-        mostrarRotacao(true);  
+        mostrarTranslacao(false);
+        mostrarRotacao(false);
+        mostrarEscala(true);
     }
 
     private static void mostrarTranslacao(Boolean exibir){
@@ -26,6 +28,13 @@ public class App {
         }
     }
 
+    private static void mostrarEscala(Boolean exibir){
+        if (exibir){
+            String titulo = "Rotação em Computação Gráfica";
+            EscalaExemplo painel = new EscalaExemplo();
+            prepararPainel(titulo, painel);
+        }
+    }
 
     private static void prepararPainel(String titulo, JPanel painel){
         JFrame frame = new JFrame(titulo);
